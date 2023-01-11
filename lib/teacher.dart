@@ -13,12 +13,11 @@ class _TeacherViewState extends State<TeacherView> {
   var email = '', name = '', userType = '';
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     loadData();
   }
 
-  loadData() async {
+  Future loadData() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     email = sp.getString('email') ?? '';
     name = sp.getString('name') ?? '';

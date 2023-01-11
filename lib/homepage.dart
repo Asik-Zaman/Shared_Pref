@@ -13,12 +13,12 @@ class _HomePageState extends State<HomePage> {
   var email = '', name = '', age = '';
   @override
   void initState() {
-    // TODO: implement initState
+  
     super.initState();
     loadData();
   }
 
-  loadData() async {
+  Future loadData() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
     email = sp.getString('email') ?? '';
     name = sp.getString('name') ?? '';
